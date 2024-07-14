@@ -1,6 +1,8 @@
 package com.example.bookmyshow_first.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -11,6 +13,7 @@ public class ShowSeat extends BaseModel{
     private Show show;
     @ManyToOne
     private Seat seat;
+    @Enumerated(value = EnumType.STRING)
     private SeatStatus  seatStatus;
     @ManyToOne
     private User bookedBy;
